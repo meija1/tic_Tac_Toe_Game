@@ -1,3 +1,79 @@
 body {
     font-family: "Unbounded", sans-serif;
+    background-color: black;
+    margin: 0;
+}
+ 
+#tic{
+    width: 100px;
+    height: 100px;
+    position:absolute;
+    top: -100%;
+    left: 30%;
+    animation: anim 2s forwards, anim2 3s;
+}
+
+#tic::after{
+    content: '';
+    position: absolute;
+}
+
+#tic h1 {
+    font-size: 50px;
+    color: rgb(255, 54, 54);
+}
+
+@keyframes anim {
+    form{
+        top: -100%;
+    }
+    to{
+        top: 10%;
+    }
+}
+
+@keyframes anim2{
+    form{
+        left: 30%;
+    }
+    to{
+        left: 30%;
+    }
+}
+
+#tac{
+    width: 100px;
+    height: 100px;
+    position:absolute;
+    top: -100%;
+    left: 40%;
+    animation: anim3 3s forwards, anim4 4s;
+}
+
+#tac::after{
+    content: '';
+    position: absolute;
+}
+
+#tac h1 {
+    font-size: xx-large;
+    color: white;
+}
+
+@keyframes anim3 {
+    form{
+        top: -100%;
+    }
+    to{
+        top: 10%;
+    }
+}
+
+@keyframes anim4 {
+    form{
+        left: 40%;
+    }
+    to{
+        left: 40%;
+    }
 }
