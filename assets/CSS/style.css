@@ -4,12 +4,11 @@ body {
     margin: 0;
 }
  
-#tic{
-    width: 100px;
-    height: 100px;
+#tic {
+    padding: 0;
     position:absolute;
     top: -100%;
-    left: 40%;
+    left: 35%;
     animation: anim 1s forwards;
 }
 
@@ -19,21 +18,20 @@ body {
 }
 
 @keyframes anim {
-    form{
+    from{
         top: -100%;
     }
     to{
         top: 10%;
-        left: 40%;
+        left: 35%;
     }
 }
 
-#tac{
-    width: 100px;
-    height: 100px;
+#tac {
+    padding: 0;
     position:absolute;
     top: -100%;
-    left: 50%;
+    left: 45%;
     animation: anim1 2s forwards;
 }
 
@@ -43,21 +41,20 @@ body {
 }
 
 @keyframes anim1 {
-    form{
+    from{
         top: -100%;
     }
     to{
         top: 10%;
-        left: 50%;
+        left: 45%;
     }
 }
 
 #toe{
-    width: 100px;
-    height: 100px;
+    padding: 0;
     position:absolute;
     top: -100%;
-    left: 60%;
+    left: 55%;
     animation: anim2 3s forwards;
 }
 
@@ -67,11 +64,11 @@ body {
 }
 
 @keyframes anim2 {
-    form{
+    from{
         top: -100%;
     }
     to{
         top: 10%;
-        left: 60%;
+        left: 55%;
     }
 }
