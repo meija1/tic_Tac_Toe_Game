@@ -9,13 +9,8 @@ body {
     height: 100px;
     position:absolute;
     top: -100%;
-    left: 30%;
-    animation: anim 2s forwards, anim2 3s;
-}
-
-#tic::after{
-    content: '';
-    position: absolute;
+    left: 40%;
+    animation: anim 1s forwards;
 }
 
 #tic h1 {
@@ -29,15 +24,7 @@ body {
     }
     to{
         top: 10%;
-    }
-}
-
-@keyframes anim2{
-    form{
-        left: 30%;
-    }
-    to{
-        left: 30%;
+        left: 40%;
     }
 }
 
@@ -46,34 +33,45 @@ body {
     height: 100px;
     position:absolute;
     top: -100%;
-    left: 40%;
-    animation: anim3 3s forwards, anim4 4s;
-}
-
-#tac::after{
-    content: '';
-    position: absolute;
+    left: 50%;
+    animation: anim1 2s forwards;
 }
 
 #tac h1 {
-    font-size: xx-large;
+    font-size: 50px;
     color: white;
 }
 
-@keyframes anim3 {
+@keyframes anim1 {
     form{
         top: -100%;
     }
     to{
         top: 10%;
+        left: 50%;
     }
 }
 
-@keyframes anim4 {
+#toe{
+    width: 100px;
+    height: 100px;
+    position:absolute;
+    top: -100%;
+    left: 60%;
+    animation: anim2 3s forwards;
+}
+
+#toe h1 {
+    font-size: 50px;
+    color: rgb(92, 74, 255);
+}
+
+@keyframes anim2 {
     form{
-        left: 40%;
+        top: -100%;
     }
     to{
-        left: 40%;
+        top: 10%;
+        left: 60%;
     }
 }
