@@ -78,13 +78,13 @@ body {
 #button {
     padding: 0;
     position: absolute;
-    width: 50px;
-    height: 20px;
+    width: 70px;
+    height: 40px;
     top: 35%;
     left: 47%;
     animation: anim3 5s forwards;
     animation-delay: 3s;
-    color: white;
+    color: black;
 }
 
 @keyframes anim3 {
@@ -92,6 +92,8 @@ body {
         opacity: 0.0;
     }
     to{
+        color: white;
+        border-color: white;
         opacity: 1.0;
     }
 }
