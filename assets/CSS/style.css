@@ -24,7 +24,7 @@ body {
         top: -100%;
     }
     to{
-        top: 10%;
+        top: 5%;
         left: 35%;
     }
 }
@@ -47,7 +47,7 @@ body {
         top: -100%;
     }
     to{
-        top: 10%;
+        top: 5%;
         left: 45%;
     }
 }
@@ -70,7 +70,7 @@ body {
         top: -100%;
     }
     to{
-        top: 10%;
+        top: 5%;
         left: 55%;
     }
 }
@@ -78,13 +78,13 @@ body {
 #button {
     padding: 0;
     position: absolute;
-    width: 70px;
-    height: 40px;
+    width: 150px;
+    height: 50px;
     top: 35%;
-    left: 47%;
+    left: 45%;
     animation: anim3 5s forwards;
     animation-delay: 3s;
-    color: black;
+    background-color: black;
 }
 
 @keyframes anim3 {
@@ -96,4 +96,15 @@ body {
         border-color: white;
         opacity: 1.0;
     }
+}
+
+/* Game Display Area */
+
+#game-board {
+    display: none;
+    position: relative;
+    background-color: rgb(92, 92, 92);
+    margin-top: 12%;
+    height: 470px;
+    width: 100%;
 }
