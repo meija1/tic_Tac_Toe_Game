@@ -111,7 +111,9 @@ body {
 
 #backboard {
     background-color: white;
+    overflow: hidden;
     margin-top: 10%;
+    left: 36vw;
     width: 324px;
     height: 65%;
     position: absolute;

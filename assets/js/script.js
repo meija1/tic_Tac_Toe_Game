@@ -4,6 +4,10 @@ function showGame () {
     gameBoard.style.display = "block";
 }
 
+function runGame() {
+    
+}
+
 function gameArea() {
 
 }
