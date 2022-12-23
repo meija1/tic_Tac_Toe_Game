@@ -111,20 +111,33 @@ body {
 
 #backboard {
     background-color: white;
-    margin-top: 3%;
-    left: 35vw;
-    width: 32%;
-    height: 83%;
+    margin-top: 11%;
+    left: 37vw;
+    width: 324px;
+    height: 65%;
     position: absolute;
-    overflow: hidden;
 }
 
-#backboard div {
+#backboard .game-area1 {
     background-color: black;
-    position: relative;
-    width: 100px;
+    color: black;
+    width: 105px;
     height: 100px;
-    left: 37vw;
-    margin-top: 5%;
+    display: inline-table;
+}
+
+#backboard .game-area2 {
+    background-color: black;
+    color: black;
+    width: 105px;
+    height: 100px;
+    display: inline-table;
+}
+
+#backboard .game-area3 {
+    background-color: black;
+    color: black;
+    width: 105px;
+    height: 100px;
     display: inline-table;
 }
