@@ -103,7 +103,7 @@ body {
 #game-board {
     display: none;
     position: relative;
-    background-color: rgb(92, 92, 92);
+    background-color: black;
     margin-top: 12%;
     height: 470px;
     width: 100%;
@@ -111,33 +111,36 @@ body {
 
 #backboard {
     background-color: white;
-    margin-top: 11%;
-    left: 37vw;
+    margin-top: 10%;
     width: 324px;
     height: 65%;
     position: absolute;
+    white-space: nowrap;
 }
 
 #backboard .game-area1 {
     background-color: black;
-    color: black;
-    width: 105px;
+    width: 106px;
     height: 100px;
     display: inline-table;
 }
 
 #backboard .game-area2 {
+    position: relative;
     background-color: black;
-    color: black;
-    width: 105px;
+    width: 106px;
     height: 100px;
+    top: 34%;
+    left: -102%;
     display: inline-table;
 }
 
 #backboard .game-area3 {
+    position: relative;
     background-color: black;
-    color: black;
-    width: 105px;
+    width: 106px;
+    left: -204%;
+    top: 68%;
     height: 100px;
     display: inline-table;
 }
