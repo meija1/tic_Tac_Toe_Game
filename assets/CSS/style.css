@@ -25,7 +25,7 @@ body {
     }
     to{
         top: 5%;
-        left: 35%;
+        left: 37vw;
     }
 }
 
@@ -48,7 +48,7 @@ body {
     }
     to{
         top: 5%;
-        left: 45%;
+        left: 45vw;
     }
 }
 
@@ -71,7 +71,7 @@ body {
     }
     to{
         top: 5%;
-        left: 55%;
+        left: 55vw;
     }
 }
 
@@ -113,7 +113,7 @@ body {
     background-color: white;
     overflow: hidden;
     margin-top: 10%;
-    left: 36vw;
+    left: 38vw;
     width: 324px;
     height: 65%;
     position: absolute;
@@ -145,4 +145,14 @@ body {
     top: 68%;
     height: 100px;
     display: inline-table;
+}
+
+#game-mode {
+    background-color: aliceblue;
+    height: 30px;
+    width: 50%;
+}
+
+#game-mode li {
+    list-style-type: none;
 }
