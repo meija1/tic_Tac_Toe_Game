@@ -147,12 +147,19 @@ body {
     display: inline-table;
 }
 
+/* Game mode selection */
+
 #game-mode {
-    background-color: aliceblue;
+    top: 2%;
+    background-color: black;
     height: 30px;
-    width: 50%;
+    width: 60%;
+    margin-left: 17vw;
 }
 
-#game-mode li {
-    list-style-type: none;
+a {
+    margin-left: 16vw;
+    font-size: x-large;
+    color: white;
+    text-decoration: none;
 }
