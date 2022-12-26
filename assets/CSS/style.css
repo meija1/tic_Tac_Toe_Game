@@ -168,6 +168,8 @@ a {
 
 .x::after {
     content: 'X';
+    font-size: 90px;
+    color: red;
 }
 
 .o::after {
