@@ -163,3 +163,13 @@ a {
     color: white;
     text-decoration: none;
 }
+
+/* X and O style */
+
+.x::after {
+    content: 'X';
+}
+
+.o::after {
+    content: 'O';
+}
