@@ -168,10 +168,18 @@ a {
 
 .x::after {
     content: 'X';
-    font-size: 90px;
+    font-size: 100px;
     color: red;
+    display: flex;
+    justify-content: center;
+    height: 0;
 }
 
 .o::after {
     content: 'O';
+    font-size: 100px;
+    color: rgb(92, 74, 255);
+    display: flex;
+    justify-content: center;
+    height: 0;
 }

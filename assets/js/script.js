@@ -9,7 +9,7 @@ function showGame(){
 function runGame(){
     for(let i = 0; i < pos.length; i++){
         pos[i].addEventListener('click', function(){
-            pos[i].classList.toggle('x');
+            pos[i].classList.toggle('o');
         });
     }
 }
