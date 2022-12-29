@@ -82,6 +82,7 @@ body {
     height: 50px;
     top: 35%;
     left: 45%;
+    text-size-adjust: 10px;
     animation: anim3 5s forwards;
     animation-delay: 3s;
     background-color: black;
@@ -162,6 +163,10 @@ a {
     font-size: x-large;
     color: white;
     text-decoration: none;
+}
+
+.active {
+    color: red;
 }
 
 /* X and O style */

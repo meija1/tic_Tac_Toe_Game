@@ -1,8 +1,7 @@
 const pos = document.querySelectorAll('[data-cell]');
 const gameBoard = document.getElementById('backboard');
 const winningPos = [[1,2,3],[4,5,6],[7,8,9],[1,4,7],[2,5,8],[3,6,9],[1,5,9],[3,5,7]];
-const currentPlayer = 'X';
-gameMode()
+let currentPlayer = 'X';
 
 
 function showGame(){
@@ -10,13 +9,17 @@ function showGame(){
 }
 
 function gameMode(){
-    let gameMode1 = document.getElementById('gMode1');
-    let gameMode2 = document.getElementById('gMode2');
-    if(gameMode1){
-        return vsCpu();
-    }else if(gameMode2) {
-        return vsPlayer();
-    }
+    let vsPlayerMode = document.getElementById('gMode1');
+    let vsCpuMode = document.getElementById('gMode2');
+    vsPlayerMode.addEventListener('click', function(){
+        vsPlayerMode.classList.add('active');
+        vsPlayer();
+    })
+    vsCpuMode.addEventListener('click', function(){
+        vsCpuMode.classList.add('active');
+        vsPlayerMode.classList.remove('active');
+        vsCpu()
+    })
 }
 
 function vsPlayer(){
@@ -24,7 +27,6 @@ function vsPlayer(){
         if(currentPlayerTurn){
         pos[i].addEventListener('click', function(){
             pos[i].classList.toggle('x');
-            currentPlayer = 'O';
         });
     }else {
         pos[i].classList.toggle('o');
@@ -33,7 +35,17 @@ function vsPlayer(){
 }
 
 function vsCpu() {
-    
+    for(let i = 0; i < pos.length; i++){
+        if(currentPlayerTurn){
+        pos[i].addEventListener('click', function(){
+            pos[i].classList.toggle('o');
+        });
+    }
+}
+}
+
+function currentPlayerTurn() {
+    currentPlayer = currentPlayer =='X' ? currentPlayer = 'O' : currentPlayer = 'X';
 }
 
 
