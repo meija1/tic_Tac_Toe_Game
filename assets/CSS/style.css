@@ -193,7 +193,10 @@ a:active {
 
 #restart {
     display: none;
-    left: 50%;
-    top: 40%;
+    padding: 0;
     position: absolute;
+    width: 150px;
+    height: 50px;
+    top: 15%;
+    left: 45%;
 }
