@@ -165,7 +165,7 @@ a {
     text-decoration: none;
 }
 
-.active {
+a:active {
     color: red;
 }
 
@@ -187,4 +187,13 @@ a {
     display: flex;
     justify-content: center;
     height: 0;
+}
+
+/* Play Again Screen */
+
+#restart {
+    display: none;
+    left: 50%;
+    top: 40%;
+    position: absolute;
 }
