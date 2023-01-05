@@ -24,11 +24,9 @@ function vsPlayer() {
             currentPlayer === true ? xPlayer.push(cell) : oPlayer.push(cell);
             pos.classList.add(currentPlayer ? 'x' : 'o');
             currentPlayer = !currentPlayer;
-            checkWinner();
 
-          if(xPlayer.length >= 5) {
-            document.getElementById('startAgain').style.display = 'block';
-            document.getElementById('text').textContent = "It's a Draw!"
+          if(xPlayer.length >= 3) {
+            checkWinner()
          }
         }
 });
@@ -47,6 +45,9 @@ function checkWinner() {
         if(xWon || oWon){
             document.getElementById('startAgain').style.display = 'block';
             document.getElementById('text').textContent = xWon ? "X Won" : "O Won";
+        } else if(xPlayer.length >= 5) {
+            document.getElementById('startAgain').style.display = 'block';
+            document.getElementById('text').textContent = "It's a Draw!"
         }
     })
 }
