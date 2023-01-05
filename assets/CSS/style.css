@@ -82,7 +82,6 @@ body {
     height: 50px;
     top: 35%;
     left: 45%;
-    text-size-adjust: 10px;
     animation: anim3 5s forwards;
     animation-delay: 3s;
     background-color: black;
@@ -207,4 +206,11 @@ a:active {
     height: 50px;
     top: 15%;
     left: 45%;
+}
+
+#startAgain div{
+    position: absolute;
+    font-size: xxx-large;
+    top: 50%;
+    left: 40%;
 }

@@ -4,6 +4,7 @@ const vsCpuMode = document.getElementById('gMode1');
 let currentPlayer = true;
 let xPlayer = [];
 let oPlayer = [];
+let winPositions = [['0','1','2'],['3','4','5'],['6','7','8'],['0','3','6'],['1','4','7'],['2','5','8'],['0','4','8']['2','4','6']];
 
 function showGame() {
     document.getElementById('game-board').style.display = 'block';
@@ -23,8 +24,11 @@ function vsPlayer() {
             currentPlayer === true ? xPlayer.push(cell) : oPlayer.push(cell);
             pos.classList.add(currentPlayer ? 'x' : 'o');
             currentPlayer = !currentPlayer;
+            checkWinner();
+
           if(xPlayer.length >= 5) {
             document.getElementById('startAgain').style.display = 'block';
+            document.getElementById('text').textContent = "It's a Draw!"
          }
         }
 });
@@ -37,5 +41,12 @@ function vsCpu() {
 }
 
 function checkWinner() {
-
+    winPositions.forEach(winPos => {
+        let xWon = winPos.every(win => xPlayer.includes(win));
+        let oWon = winPos.every(win => oPlayer.includes(win));
+        if(xWon || oWon){
+            document.getElementById('startAgain').style.display = 'block';
+            document.getElementById('text').textContent = xWon ? "X Won" : "O Won";
+        }
+    })
 }
