@@ -1,14 +1,6 @@
-let pos = document.querySelectorAll('data-cell');
-const winningPos = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9],
-    [1, 4, 7],
-    [2, 5, 8],
-    [3, 6, 9],
-    [1, 5, 9],
-    [3, 5, 7]
-];
+let pos = Array.from(document.querySelectorAll('data-cell'));
+
+
 const vsPlayerMode = document.getElementById('gMode2');
 const vsCpuMode = document.getElementById('gMode1');
 let currentPlayer = true;
@@ -24,17 +16,20 @@ vsCpuMode.addEventListener('click', vsCpu);
 
 function vsPlayer() {
     document.addEventListener('click', event => {
-        pos = event.target;
-        let posTrue = pos.hasAttribute('data-cell');
-
+    pos = event.target;
+    let posTrue = pos.hasAttribute('data-cell');
+    
         if (posTrue) {
             pos.style.pointerEvents = "none";
-            let cell = pos.dataset.value;
+            let cell = pos.dataset.index;
             currentPlayer === true ? xPlayer.push(cell) : oPlayer.push(cell);
             pos.classList.add(currentPlayer ? 'x' : 'o');
             currentPlayer = !currentPlayer;
+          if(xPlayer.length >= 5) {
+            document.getElementById('restart').style.display = 'block';
+         }
         }
-    });
+});
 
 }
 
@@ -44,5 +39,5 @@ function vsCpu() {
 }
 
 function checkWinner() {
-        document.getElementById('restart').style.display = "block";
+
 }
