@@ -191,8 +191,16 @@ a:active {
 
 /* Play Again Screen */
 
-#restart {
+#startAgain {
     display: none;
+    background-color: slategray;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.8;
+}
+
+#startAgain #restart {
     padding: 0;
     position: absolute;
     width: 150px;

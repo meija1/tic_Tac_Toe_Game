@@ -1,6 +1,4 @@
 let pos = Array.from(document.querySelectorAll('data-cell'));
-
-
 const vsPlayerMode = document.getElementById('gMode2');
 const vsCpuMode = document.getElementById('gMode1');
 let currentPlayer = true;
@@ -26,7 +24,7 @@ function vsPlayer() {
             pos.classList.add(currentPlayer ? 'x' : 'o');
             currentPlayer = !currentPlayer;
           if(xPlayer.length >= 5) {
-            document.getElementById('restart').style.display = 'block';
+            document.getElementById('startAgain').style.display = 'block';
          }
         }
 });
