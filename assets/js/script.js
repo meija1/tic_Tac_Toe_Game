@@ -4,7 +4,6 @@ const vsCpuMode = document.getElementById('gMode1');
 let currentPlayer = true;
 let xPlayer = [];
 let oPlayer = [];
-let winPositions = [['0','1','2'],['3','4','5'],['6','7','8'],['0','3','6'],['1','4','7'],['2','5','8'],['0','4','8']['2','4','6']];
 
 function showGame() {
     document.getElementById('game-board').style.display = 'block';
@@ -17,10 +16,11 @@ function vsPlayer() {
     document.addEventListener('click', event => {
     pos = event.target;
     let posTrue = pos.hasAttribute('data-cell');
-    
+
         if (posTrue) {
+            
             pos.style.pointerEvents = "none";
-            let cell = pos.dataset.index;
+            let cell = pos.getAttribute('data-cell');
             currentPlayer === true ? xPlayer.push(cell) : oPlayer.push(cell);
             pos.classList.add(currentPlayer ? 'x' : 'o');
             currentPlayer = !currentPlayer;
@@ -39,15 +39,27 @@ function vsCpu() {
 }
 
 function checkWinner() {
+    const winPositions = [['0','1','2'],['3','4','5'],['6','7','8'],['0','3','6'],['1','4','7'],['2','5','8'],['0','4','8'],['2','4','6']];
     winPositions.forEach(winPos => {
-        let xWon = winPos.every(win => xPlayer.includes(win));
-        let oWon = winPos.every(win => oPlayer.includes(win));
+        const xWon = winPos.every(pos => xPlayer.includes(pos))
+        const oWon = winPos.every(pos => oPlayer.includes(pos))
+        
         if(xWon || oWon){
             document.getElementById('startAgain').style.display = 'block';
             document.getElementById('text').textContent = xWon ? "X Won" : "O Won";
+            restartGame();
         } else if(xPlayer.length >= 5) {
             document.getElementById('startAgain').style.display = 'block';
             document.getElementById('text').textContent = "It's a Draw!"
+            restartGame();
         }
     })
+}
+
+function restartGame() {
+    document.getElementById('restart').addEventListener('click', function(){
+        document.getElementById('startAgain').style.display = 'none';
+    });
+    xPlayer = [];
+    oPlayer = [];
 }
