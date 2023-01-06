@@ -67,8 +67,11 @@ function checkWinner() {
 function restartGame() {
     document.getElementById('restart').addEventListener('click', function () {
         document.getElementById('startAgain').style.display = 'none';
-    xPlayer = [];
-    oPlayer = [];
-    });
-    
+    document.querySelectorAll('data-cell').forEach(cell => {
+        cell.classList.remove('x','o');
+    })
+    currentPlayer = true
+    xPlayer = []
+    oPlayer = []
+    });   
 }

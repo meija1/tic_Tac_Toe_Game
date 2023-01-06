@@ -112,7 +112,7 @@ body {
 #backboard {
     background-color: white;
     overflow: hidden;
-    margin-top: 10%;
+    margin-top: 2%;
     left: 38vw;
     width: 324px;
     height: 65%;
@@ -173,8 +173,9 @@ a:active {
     color: rgb(255, 54, 54);
     margin: 0;
     padding: 0;
-    margin-left: 84vw;
-    top: 20vw;
+    margin-left: 10%;
+    top: 22vw;
+    font-size: 30px;
 }
 
 #oWin p {
@@ -182,8 +183,9 @@ a:active {
     color: rgb(92, 74, 255);
     margin: 0;
     padding: 0;
-    margin-left: 84vw;
-    top: 20vw;
+    margin-left: 80%;
+    top: 18vw;
+    font-size: 30px;
 }
 
 /* X and O style */
