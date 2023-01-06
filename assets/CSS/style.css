@@ -168,6 +168,24 @@ a:active {
     color: red;
 }
 
+#xWin p {
+    position: relative;
+    color: rgb(255, 54, 54);
+    margin: 0;
+    padding: 0;
+    margin-left: 84vw;
+    top: 20vw;
+}
+
+#oWin p {
+    position: relative;
+    color: rgb(92, 74, 255);
+    margin: 0;
+    padding: 0;
+    margin-left: 84vw;
+    top: 20vw;
+}
+
 /* X and O style */
 
 .x::after {
