@@ -54,6 +54,8 @@ function checkWinner() {
         if (xWon || oWon) {
             document.getElementById('startAgain').style.display = 'block'
             document.getElementById('text').textContent = xWon ? "X Won!" : "O Won!"
+            let score = parseInt(document.getElementById('score').innerText)
+            document.getElementById('score').innerText = score + 1;
             restartGame();
         } else if (xPlayer.length >= 5) {
             document.getElementById('startAgain').style.display = 'block'
@@ -66,7 +68,6 @@ function checkWinner() {
 function restartGame() {
     document.getElementById('restart').addEventListener('click', () => {
         document.getElementById('startAgain').style.display = 'none'
-        pos.classList.remove('x')
         
     })
     currentPlayer = true
