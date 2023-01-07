@@ -19,6 +19,10 @@ function showGame() {
     document.getElementById('game-board').style.display = 'block'
 }
 
+function gameMode() {
+
+}
+
 vsPlayerMode.addEventListener('click', vsPlayer)
 vsCpuMode.addEventListener('click', vsCpu)
 
@@ -51,15 +55,25 @@ function checkWinner() {
         const xWon = winPos.every(pos => xPlayer.includes(pos))
         const oWon = winPos.every(pos => oPlayer.includes(pos))
 
-        if (xWon || oWon) {
-            document.getElementById('startAgain').style.display = 'block'
-            document.getElementById('text').textContent = xWon ? "X Won!" : "O Won!"
-            let score = parseInt(document.getElementById('score').innerText)
-            document.getElementById('score').innerText = score + 1;
+        if (xWon) {
+            let xScore = parseInt(document.getElementById('xScore').innerText);
+
+            document.getElementById('startAgain').style.display = 'block';
+            document.getElementById('text').textContent = "X Won!";
+
+            document.getElementById('xScore').innerText = xScore + 1;
             restartGame();
-        } else if (xPlayer.length >= 5) {
-            document.getElementById('startAgain').style.display = 'block'
-            document.getElementById('text').textContent = "It's a Draw!"
+        } if(oWon) {
+            let oScore = parseInt(document.getElementById('oScore').innerText);
+
+            document.getElementById('startAgain').style.display = 'block';
+            document.getElementById('text').textContent = "O Won!";
+
+            document.getElementById('oScore').innerText = oScore + 1;
+            restartGame();
+        }else if (xPlayer.length >= 5) {
+            document.getElementById('startAgain').style.display = 'block';
+            document.getElementById('text').textContent = "It's a Draw!";
             restartGame()
         }
     })
