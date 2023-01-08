@@ -1,6 +1,4 @@
-let pos = Array.from(document.querySelectorAll('data-cell'))
-const vsPlayerMode = document.getElementById('gMode2')
-const vsCpuMode = document.getElementById('gMode1')
+let pos = document.querySelectorAll('[data-cell]');
 let winPositions = [
     ['0', '1', '2'],
     ['3', '4', '5'],
@@ -10,44 +8,55 @@ let winPositions = [
     ['2', '5', '8'],
     ['0', '4', '8'],
     ['2', '4', '6']
-]
-let currentPlayer = true
-let xPlayer = []
-let oPlayer = []
+];
+let currentPlayer = true;
+let xPlayer = [];
+let oPlayer = [];
 
 function showGame() {
-    document.getElementById('game-board').style.display = 'block'
+    currentPlayer = true;
+    xPlayer = [];
+    oPlayer = [];
+    pos.forEach(cell => {
+        cell.classList.remove('x','o');
+    })
+    document.getElementById('game-board').style.display = 'block';
+    let buttons = document.getElementsByTagName('a');
+    for(let button of buttons){
+        button.addEventListener('click', function(){
+            let gameMode = this.getAttribute('data-mode');
+            runGame(gameMode);
+        })
+    }
+    
 }
 
-function gameMode() {
-
+function runGame(gameMode) {
+    if(gameMode === 'vsPlayer'){
+        vsPlayer();
+    } else if(gameMode === 'vsCPU'){
+        vsCpu();
+    }
 }
 
-vsPlayerMode.addEventListener('click', vsPlayer)
-vsCpuMode.addEventListener('click', vsCpu)
 
 function vsPlayer() {
-    document.addEventListener('click', event => {
-        pos = event.target;
-        let posTrue = pos.hasAttribute('data-cell')
-
-        if (posTrue) {
-            pos.style.pointerEvents = "none"
-            let cell = pos.getAttribute('data-cell')
-            currentPlayer === true ? xPlayer.push(cell) : oPlayer.push(cell)
-            pos.classList.add(currentPlayer ? 'x' : 'o')
-            currentPlayer = !currentPlayer
-
-            if (xPlayer.length >= 3) {
-                checkWinner()
+    pos.forEach(cell => {
+        cell.addEventListener('click', function(event){
+            let currentCell = event.target;
+            let position = currentCell.dataset.cell;
+            currentPlayer === true ? xPlayer.push(position) : oPlayer.push(position);
+            currentCell.classList.add(currentPlayer ? 'x' : 'o');
+            currentPlayer = !currentPlayer;
+            if(xPlayer.length >= 3){
+                checkWinner();
             }
-        }
-    });
+        })
+    })
 }
 
 
 function vsCpu() {
-
 }
 
 function checkWinner() {
@@ -81,10 +90,7 @@ function checkWinner() {
 
 function restartGame() {
     document.getElementById('restart').addEventListener('click', () => {
-        document.getElementById('startAgain').style.display = 'none'
-        
+        document.getElementById('startAgain').style.display = 'none';
     })
-    currentPlayer = true
-    xPlayer = []
-    oPlayer = []
+    showGame();
 }
