@@ -57,10 +57,18 @@ function vsPlayer() {
 function vsCpu() {
     let cpu = Math.floor(Math.random() * pos.length);
     pos.forEach(cell =>{
-        if(cell.getAttribute == 'o'){
-            pos[cpu].classList.add('o');
-            oPlayer.push(cell.dataset.cell);
+        if(currentPlayer){
+            cell.addEventListener('click', function (event){
+                let currentCell = event.target;
+                let position = currentCell.dataset.cell;
+                xPlayer.push(position);
+                currentCell.classList.add('x');
+            })
+            
+        }else {
+            cell = pos[cpu].classList.add('o');
         }
+        currentPlayer =!currentPlayer;
     })
 }
 

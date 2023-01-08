@@ -238,3 +238,46 @@ span {
     top: 50%;
     left: 40%;
 }
+
+@media (max-width:1000px) {
+    #tic h1 {
+        font-size: 30px;
+    }
+    
+    @keyframes anim {
+        from{
+            top: -100%;
+        }
+        to{
+            top: 2%;
+            left: 15vw;
+        }
+    }
+    #tac h1 {
+        font-size: 30px;
+    }
+
+    @keyframes anim1 {
+        from{
+            top: -100%;
+        }
+        to{
+            top: 2%;
+            left: 36vw;
+        }
+    }
+
+    #toe h1 {
+        font-size: 30px
+    }
+
+    @keyframes anim2 {
+        from{
+            top: -100%;
+        }
+        to{
+            top: 2%;
+            left: 59vw;
+        }
+    }
+}
