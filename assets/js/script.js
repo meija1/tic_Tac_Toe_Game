@@ -13,42 +13,40 @@ let currentPlayer = true;
 let xPlayer = [];
 let oPlayer = [];
 
-function showGame() {
-    currentPlayer = true;
-    xPlayer = [];
-    oPlayer = [];
-    pos.forEach(cell => {
-        cell.classList.remove('x','o');
-    })
+document.getElementById('button').addEventListener('click', function () {
     document.getElementById('game-board').style.display = 'block';
     let buttons = document.getElementsByTagName('a');
-    for(let button of buttons){
-        button.addEventListener('click', function(){
+    for (let button of buttons) {
+        button.addEventListener('click', function () {
             let gameMode = this.getAttribute('data-mode');
+            currentPlayer = true;
+            xPlayer = [];
+            oPlayer = [];
+            pos.forEach(cell => {
+                cell.classList.remove('x', 'o');
+            })
             runGame(gameMode);
         })
     }
-    
-}
+})
 
 function runGame(gameMode) {
-    if(gameMode === 'vsPlayer'){
+    if (gameMode === 'vsPlayer') {
         vsPlayer();
-    } else if(gameMode === 'vsCPU'){
+    } else if (gameMode === 'vsCPU') {
         vsCpu();
     }
 }
 
-
 function vsPlayer() {
     pos.forEach(cell => {
-        cell.addEventListener('click', function(event){
+        cell.addEventListener('click', function (event) {
             let currentCell = event.target;
             let position = currentCell.dataset.cell;
             currentPlayer === true ? xPlayer.push(position) : oPlayer.push(position);
             currentCell.classList.add(currentPlayer ? 'x' : 'o');
             currentPlayer = !currentPlayer;
-            if(xPlayer.length >= 3){
+            if (xPlayer.length >= 3) {
                 checkWinner();
             }
         })
@@ -57,6 +55,13 @@ function vsPlayer() {
 
 
 function vsCpu() {
+    let cpu = Math.floor(Math.random() * pos.length);
+    pos.forEach(cell =>{
+        if(cell.getAttribute == 'o'){
+            pos[cpu].classList.add('o');
+            oPlayer.push(cell.dataset.cell);
+        }
+    })
 }
 
 function checkWinner() {
@@ -72,7 +77,8 @@ function checkWinner() {
 
             document.getElementById('xScore').innerText = xScore + 1;
             restartGame();
-        } if(oWon) {
+        }
+        if (oWon) {
             let oScore = parseInt(document.getElementById('oScore').innerText);
 
             document.getElementById('startAgain').style.display = 'block';
@@ -80,7 +86,7 @@ function checkWinner() {
 
             document.getElementById('oScore').innerText = oScore + 1;
             restartGame();
-        }else if (xPlayer.length >= 5) {
+        } else if (xPlayer.length >= 5) {
             document.getElementById('startAgain').style.display = 'block';
             document.getElementById('text').textContent = "It's a Draw!";
             restartGame()
@@ -92,5 +98,10 @@ function restartGame() {
     document.getElementById('restart').addEventListener('click', () => {
         document.getElementById('startAgain').style.display = 'none';
     })
-    showGame();
+    currentPlayer = true;
+    xPlayer = [];
+    oPlayer = [];
+    pos.forEach(cell => {
+        cell.classList.remove('x', 'o');
+    })
 }
