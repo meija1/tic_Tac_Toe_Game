@@ -15,26 +15,37 @@ let oPlayer = [];
 
 function showGame() {
     document.getElementById('game-board').style.display = 'block';
-    runGame()
 }
 
-pos.forEach(cell => {
-    cell.addEventListener('click', () => runGame(cell))
+function mouseOver() {
+    pos.forEach(cell => {
+    cell.addEventListener('mouseenter', () => cell.classList.add('active'));
+    cell.addEventListener('mouseleave', () => cell.classList.remove('active'));
 })
+}
 
-function runGame(cell) {
-    cell.classList.add(currentPlayer ? 'x' : 'o');
-    cell.style.pointerEvents = 'none';
-    let isCell = parseInt(cell.getAttribute('data-cell'));
-    if (currentPlayer === true) {
-        xPlayer.push(isCell);
-    } else {
-        oPlayer.push(isCell);
-    }
-    currentPlayer = !currentPlayer;
-    if (xPlayer.length >= 3) {
-        checkWinner();
-    }
+
+
+runGame()
+
+function runGame() {
+    pos.forEach(cell => {
+        cell.addEventListener('click', function () {
+            cell.style.pointerEvents = 'none';
+            let isCell = cell.getAttribute('data-cell');
+            currentPlayer === true ? xPlayer.push(isCell) : oPlayer.push(isCell);
+            if(currentPlayer === true){
+                mouseOver()
+                cell.classList.add('x');
+            } else {
+                cell.classList.add('o');
+            }
+            currentPlayer = !currentPlayer;
+            checkWinner();
+        })
+
+    })
+
 }
 
 function checkWinner() {

@@ -147,6 +147,22 @@ body {
     display: inline-table;
 }
 
+/* Turns Text */
+
+#turns {
+    position: relative;
+}
+
+#turnText {
+    position: relative;
+    color: rgb(92, 74, 255);
+    margin: 0;
+    padding: 0;
+    margin-left: 80%;
+    top: 18vw;
+    font-size: 30px;
+}
+
 /* X and O Scores */
 
 #xWin p {
@@ -188,6 +204,15 @@ span {
     content: 'O';
     font-size: 100px;
     color: rgb(92, 74, 255);
+    display: flex;
+    justify-content: center;
+    height: 0;
+}
+
+.active {
+    content: 'X';
+    font-size: 100px;
+    background-color: rgb(44, 44, 44) !important;
     display: flex;
     justify-content: center;
     height: 0;
