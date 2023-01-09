@@ -13,63 +13,28 @@ let currentPlayer = true;
 let xPlayer = [];
 let oPlayer = [];
 
-document.getElementById('button').addEventListener('click', function () {
+function showGame() {
     document.getElementById('game-board').style.display = 'block';
-    let buttons = document.getElementsByTagName('a');
-    for (let button of buttons) {
-        button.addEventListener('click', function () {
-            let gameMode = this.getAttribute('data-mode');
-            currentPlayer = true;
-            xPlayer = [];
-            oPlayer = [];
-            pos.forEach(cell => {
-                cell.classList.remove('x', 'o');
-            })
-            runGame(gameMode);
-        })
-    }
+    runGame()
+}
+
+pos.forEach(cell => {
+    cell.addEventListener('click', () => runGame(cell))
 })
 
-function runGame(gameMode) {
-    if (gameMode === 'vsPlayer') {
-        vsPlayer();
-    } else if (gameMode === 'vsCPU') {
-        vsCpu();
+function runGame(cell) {
+    cell.classList.add(currentPlayer ? 'x' : 'o');
+    cell.style.pointerEvents = 'none';
+    let isCell = parseInt(cell.getAttribute('data-cell'));
+    if (currentPlayer === true) {
+        xPlayer.push(isCell);
+    } else {
+        oPlayer.push(isCell);
     }
-}
-
-function vsPlayer() {
-    pos.forEach(cell => {
-        cell.addEventListener('click', function (event) {
-            let currentCell = event.target;
-            let position = currentCell.dataset.cell;
-            currentPlayer === true ? xPlayer.push(position) : oPlayer.push(position);
-            currentCell.classList.add(currentPlayer ? 'x' : 'o');
-            currentPlayer = !currentPlayer;
-            if (xPlayer.length >= 3) {
-                checkWinner();
-            }
-        })
-    })
-}
-
-
-function vsCpu() {
-    let cpu = Math.floor(Math.random() * pos.length);
-    pos.forEach(cell =>{
-        if(currentPlayer){
-            cell.addEventListener('click', function (event){
-                let currentCell = event.target;
-                let position = currentCell.dataset.cell;
-                xPlayer.push(position);
-                currentCell.classList.add('x');
-            })
-            
-        }else {
-            cell = pos[cpu].classList.add('o');
-        }
-        currentPlayer =!currentPlayer;
-    })
+    currentPlayer = !currentPlayer;
+    if (xPlayer.length >= 3) {
+        checkWinner();
+    }
 }
 
 function checkWinner() {
@@ -111,5 +76,6 @@ function restartGame() {
     oPlayer = [];
     pos.forEach(cell => {
         cell.classList.remove('x', 'o');
+        cell.style.pointerEvents = 'auto';
     })
 }

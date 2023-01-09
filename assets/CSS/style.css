@@ -112,7 +112,7 @@ body {
 #backboard {
     background-color: white;
     overflow: hidden;
-    margin-top: 2%;
+    margin-top: 1%;
     left: 38vw;
     width: 324px;
     height: 65%;
@@ -147,26 +147,7 @@ body {
     display: inline-table;
 }
 
-/* Game mode selection */
-
-#game-mode {
-    top: 2%;
-    background-color: black;
-    height: 30px;
-    width: 60%;
-    margin-left: 17vw;
-}
-
-a {
-    margin-left: 16vw;
-    font-size: x-large;
-    color: white;
-    text-decoration: none;
-}
-
-a:active {
-    color: red;
-}
+/* X and O Scores */
 
 #xWin p {
     position: relative;
@@ -216,6 +197,7 @@ span {
 
 #startAgain {
     display: none;
+    position: absolute;
     background-color: slategray;
     padding: 0;
     height: 100%;
