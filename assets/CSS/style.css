@@ -150,17 +150,15 @@ body {
 /* Turns Text */
 
 #turns {
-    position: relative;
+    position: absolute;
+    color: white;
+    margin-left: 44%;
+    margin-top: 315px;
+    white-space: nowrap;
 }
 
-#turnText {
-    position: relative;
-    color: rgb(92, 74, 255);
-    margin: 0;
-    padding: 0;
-    margin-left: 80%;
-    top: 18vw;
-    font-size: 30px;
+#turns p {
+    font-size: xx-large;
 }
 
 /* X and O Scores */
