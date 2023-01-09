@@ -14,10 +14,12 @@ let xPlayer = [];
 let oPlayer = [];
 let turnsText = document.getElementById('turnText');
 
+/* Show the main game after button play button has been clicked */
 function showGame() {
     document.getElementById('game-board').style.display = 'block';
 }
 
+/* Create gray scale animation for each cell of the game */
 pos.forEach(cell => {
     cell.addEventListener('mouseenter', () => cell.classList.add('active'));
     cell.addEventListener('mouseleave', () => cell.classList.remove('active'));
@@ -25,12 +27,15 @@ pos.forEach(cell => {
 
 runGame();
 
+/* Initiate the main game */
 function runGame() {
+    /* Go trough each cell and add an event listener,
+     see which cell has been clicked on */
     pos.forEach(cell => {
         cell.addEventListener('click', function () {
             cell.style.pointerEvents = 'none';
             let isCell = cell.getAttribute('data-cell');
-            isCell.length
+            /* Add classes to player array and push cells with index to the node list */
             if (currentPlayer === true) {
                 cell.classList.add('x');
                 xPlayer.push(isCell)
@@ -40,6 +45,7 @@ function runGame() {
                 oPlayer.push(isCell);
                 turnsText.innerText = "X's";
             }
+            /* Switch players */
             currentPlayer = !currentPlayer;
             checkWinner();
         })
@@ -48,11 +54,12 @@ function runGame() {
 
 }
 
+/* Check each winning position with players arrays to see winning combinations */
 function checkWinner() {
     winPositions.forEach(winPos => {
         const xWon = winPos.every(pos => xPlayer.includes(pos))
         const oWon = winPos.every(pos => oPlayer.includes(pos))
-
+        /* Display which player has won and update score */
         if (xWon) {
             let xScore = parseInt(document.getElementById('xScore').innerText);
 
@@ -70,6 +77,7 @@ function checkWinner() {
 
             document.getElementById('oScore').innerText = oScore + 1;
             restartGame();
+
         } else if (!xWon && xPlayer.length + oPlayer.length === 9) {
             document.getElementById('startAgain').style.display = 'block';
             document.getElementById('text').textContent = "It's a Draw!";
@@ -78,10 +86,12 @@ function checkWinner() {
     })
 }
 
+/* Restart game and hide start again screen */
 function restartGame() {
     document.getElementById('restart').addEventListener('click', () => {
         document.getElementById('startAgain').style.display = 'none';
     })
+    /* Clear player arrays and each cell, update current players position */
     currentPlayer = true;
     xPlayer = [];
     oPlayer = [];

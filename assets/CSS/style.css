@@ -248,6 +248,8 @@ span {
     left: 40%;
 }
 
+/* Style for different media screens */
+
 @media (max-width:1000px) {
     #tic h1 {
         font-size: 30px;
@@ -304,19 +306,37 @@ span {
     }
 
     #backboard {
-        left: 20%;
+        left: 30%;
     }
 
     #xWin p {
         margin-left: 10%;
-        top: 15vw;
+        top: 2vw;
         font-size: 15px;
     }
 
     #oWin p {
         margin-left: 70%;
-        top: 10vw;
+        top: 0vw;
         font-size: 15px;
+    }
+
+    #turns {
+        margin-top: 370px;
+    }
+
+    #turns p {
+        font-size: x-large;
+    }
+
+    #startAgain #restart {
+        left: 27%;
+    }
+
+    #startAgain div {
+        font-size: x-large;
+        top: 40%;
+        left: 34%;
     }
 }
 
@@ -330,10 +350,6 @@ span {
     #turns {
         margin-top: 380px;
         margin-left: 20%;
-    }
-
-    #turns p {
-        font-size: x-large;
     }
 
     #startAgain #restart {
