@@ -12,33 +12,33 @@ let winPositions = [
 let currentPlayer = true;
 let xPlayer = [];
 let oPlayer = [];
+let turnsText = document.getElementById('turnText');
 
 function showGame() {
     document.getElementById('game-board').style.display = 'block';
 }
 
-function mouseOver() {
-    pos.forEach(cell => {
+pos.forEach(cell => {
     cell.addEventListener('mouseenter', () => cell.classList.add('active'));
     cell.addEventListener('mouseleave', () => cell.classList.remove('active'));
 })
-}
 
-
-
-runGame()
+runGame();
 
 function runGame() {
     pos.forEach(cell => {
         cell.addEventListener('click', function () {
             cell.style.pointerEvents = 'none';
             let isCell = cell.getAttribute('data-cell');
-            currentPlayer === true ? xPlayer.push(isCell) : oPlayer.push(isCell);
-            if(currentPlayer === true){
-                mouseOver()
+            isCell.length
+            if (currentPlayer === true) {
                 cell.classList.add('x');
+                xPlayer.push(isCell)
+                turnsText.innerText = "O's";
             } else {
                 cell.classList.add('o');
+                oPlayer.push(isCell);
+                turnsText.innerText = "X's";
             }
             currentPlayer = !currentPlayer;
             checkWinner();
@@ -70,7 +70,7 @@ function checkWinner() {
 
             document.getElementById('oScore').innerText = oScore + 1;
             restartGame();
-        } else if (xPlayer.length >= 5) {
+        } else if (!xWon && xPlayer.length + oPlayer.length === 9) {
             document.getElementById('startAgain').style.display = 'block';
             document.getElementById('text').textContent = "It's a Draw!";
             restartGame()
