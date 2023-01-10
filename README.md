@@ -57,10 +57,10 @@ White lines on top of the three cells appear once they have been clicked.
     * In the GitHub repository, navigate to the Settings tab
     * From the source section drop-down menu, select the Master Branch
     * Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
-The live link can be found here - 
+The live link can be found here - https://meija1.github.io/tic_Tac_Toe_Game/
 ## Credits
 ### Contents
 * The fonts for text in the website were taken from [Google Fonts](https://fonts.google.com/)
 * Most of the game issues and bug fixes were found on [Stack Overflow](https://stackoverflow.com/)
-* Some problems with the Node list were asked on my profile here [Stack Overflow] (https://stackoverflow.com/questions/75042284/js-tic-tac-toe-disable-click-after-the-cell-is-taken)
-
+* Methods for Node list were taken from [Mozilla.Developer](https://developer.mozilla.org/en-US/docs/Web/API/NodeList)
+* Some problems with the code were asked on my profile here [Stack Overflow](https://stackoverflow.com/questions/75042284/js-tic-tac-toe-disable-click-after-the-cell-is-taken)
