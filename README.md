@@ -31,4 +31,17 @@ The website gives a game of placing x or an o at provided grid colored red and b
 ## Features Left to Implement
 * The website could benefit from a game against the computer as a selectable game mode.
 ## Testing
-I have tested the website, tried it in different browsers and devices
+I have tested the website, tried it in different browsers and devices. The main logic for the game works well and the score updates like it should.
+The top cells when clicked have small white edges on top
+
+On smaller devices the animation twitches a bit and button edges seem to appear earlier
+
+A lot of tests was run for seeing how the game logic works and how to manipulate node list.
+## Validator Testing
+* HTML
+    * No errors were returned when passing through the official W3C validator
+* CSS
+    * No errors were found when passing through the official (Jigsaw) validator
+* Javascript
+* Accessability
+
