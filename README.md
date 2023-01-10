@@ -62,5 +62,7 @@ The live link can be found here - https://meija1.github.io/tic_Tac_Toe_Game/
 ### Contents
 * The fonts for text in the website were taken from [Google Fonts](https://fonts.google.com/)
 * Most of the game issues and bug fixes were found on [Stack Overflow](https://stackoverflow.com/)
+* Element class list methods were found on [W3Schools](https://www.w3schools.com/jsref/prop_element_classlist.asp)
 * Methods for Node list were taken from [Mozilla.Developer](https://developer.mozilla.org/en-US/docs/Web/API/NodeList)
 * Some problems with the code were asked on my profile here [Stack Overflow](https://stackoverflow.com/questions/75042284/js-tic-tac-toe-disable-click-after-the-cell-is-taken)
+* Some of the game logic was taken from my old Java project on IntelliJ IDEA
