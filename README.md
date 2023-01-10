@@ -22,4 +22,13 @@ The website gives a game of placing x or an o at provided grid colored red and b
     * Below game board text shows whos turn it is giving X or O depending on who goes next.
     *  ![gameplay - turn](https://user-images.githubusercontent.com/109754892/211584917-ac83a50b-d7d1-45d3-8085-aa8a0a3e5549.png)
 * Scores
-    *   
+    * On each sides X win and O win keeps scores of each game played.
+    * ![xwin](https://user-images.githubusercontent.com/109754892/211596439-0ddc55ec-0c94-4186-8ad3-ba0208f4d194.png)
+    * ![owin](https://user-images.githubusercontent.com/109754892/211596538-8033b417-2280-4245-aca4-1518b58d178b.png)
+* Play Again screen
+    * Screen apears when there's been a winner or if it's a draw giving the necessary text.
+    * ![winningscreen](https://user-images.githubusercontent.com/109754892/211597859-0fded5b6-b950-448d-be7b-67fd7b567b73.png)
+## Features Left to Implement
+* The website could benefit from a game against the computer as a selectable game mode.
+## Testing
+I have tested the website, tried it in different browsers and devices
