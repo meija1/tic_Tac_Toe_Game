@@ -45,6 +45,22 @@ A lot of tests was run for seeing how the game logic works and how to manipulate
     * No errors were found when passing through the official (Jigsaw) validator
     https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fmeija1.github.io%2Ftic_Tac_Toe_Game%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en
 * Javascript
+    * No errors were returned when passing through the official JSHint validator
+    * ![javascript](https://user-images.githubusercontent.com/109754892/211618278-ee067f4e-8e05-4ade-8296-73dca6a14d21.png)
 * Accessability
     * I confirm that the colours and fonts chosen are easy to read and accessible by running it through lighthouse in devtools.
     * ![performance](https://user-images.githubusercontent.com/109754892/211614229-b4e04f67-3f93-4071-b113-079b464f1f8f.png)
+## Unfixed Bugs
+White lines on top of the three cells appear once they have been clicked.
+## Deployment
+* The site was deployed to GitHub pages. The steps to deploy are as follows:
+    * In the GitHub repository, navigate to the Settings tab
+    * From the source section drop-down menu, select the Master Branch
+    * Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
+The live link can be found here - 
+## Credits
+### Contents
+* The fonts for text in the website were taken from [Google Fonts](https://fonts.google.com/)
+* Most of the game issues and bug fixes were found on [Stack Overflow](https://stackoverflow.com/)
+* Some problems with the Node list were asked on my profile here [Stack Overflow] (https://stackoverflow.com/questions/75042284/js-tic-tac-toe-disable-click-after-the-cell-is-taken)
+
