@@ -23,7 +23,7 @@ function showGame() {
 pos.forEach(cell => {
     cell.addEventListener('mouseenter', () => cell.classList.add('active'));
     cell.addEventListener('mouseleave', () => cell.classList.remove('active'));
-})
+});
 
 runGame();
 
@@ -38,7 +38,7 @@ function runGame() {
             /* Add classes to player array and push cells with index to the node list */
             if (currentPlayer === true) {
                 cell.classList.add('x');
-                xPlayer.push(isCell)
+                xPlayer.push(isCell);
                 turnsText.innerText = "O's";
             } else {
                 cell.classList.add('o');
@@ -48,17 +48,15 @@ function runGame() {
             /* Switch players */
             currentPlayer = !currentPlayer;
             checkWinner();
-        })
-
-    })
-
+        });
+    });
 }
 
 /* Check each winning position with players arrays to see winning combinations */
 function checkWinner() {
     winPositions.forEach(winPos => {
-        const xWon = winPos.every(pos => xPlayer.includes(pos))
-        const oWon = winPos.every(pos => oPlayer.includes(pos))
+        const xWon = winPos.every(pos => xPlayer.includes(pos));
+        const oWon = winPos.every(pos => oPlayer.includes(pos));
         /* Display which player has won and update score */
         if (xWon) {
             let xScore = parseInt(document.getElementById('xScore').innerText);
@@ -81,16 +79,16 @@ function checkWinner() {
         } else if (!xWon && xPlayer.length + oPlayer.length === 9) {
             document.getElementById('startAgain').style.display = 'block';
             document.getElementById('text').textContent = "It's a Draw!";
-            restartGame()
+            restartGame();
         }
-    })
+    });
 }
 
 /* Restart game and hide start again screen */
 function restartGame() {
     document.getElementById('restart').addEventListener('click', () => {
         document.getElementById('startAgain').style.display = 'none';
-    })
+    });
     /* Clear player arrays and each cell, update current players position */
     currentPlayer = true;
     xPlayer = [];
@@ -98,5 +96,5 @@ function restartGame() {
     pos.forEach(cell => {
         cell.classList.remove('x', 'o');
         cell.style.pointerEvents = 'auto';
-    })
+    });
 }
