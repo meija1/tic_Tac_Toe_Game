@@ -40,8 +40,11 @@ A lot of tests was run for seeing how the game logic works and how to manipulate
 ## Validator Testing
 * HTML
     * No errors were returned when passing through the official W3C validator
+    https://validator.w3.org/nu/?doc=https%3A%2F%2Fmeija1.github.io%2Ftic_Tac_Toe_Game%2F
 * CSS
     * No errors were found when passing through the official (Jigsaw) validator
+    https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fmeija1.github.io%2Ftic_Tac_Toe_Game%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en
 * Javascript
 * Accessability
-
+    * I confirm that the colours and fonts chosen are easy to read and accessible by running it through lighthouse in devtools.
+    * ![performance](https://user-images.githubusercontent.com/109754892/211614229-b4e04f67-3f93-4071-b113-079b464f1f8f.png)
