@@ -76,7 +76,7 @@ function checkWinner() {
             document.getElementById('oScore').innerText = oScore + 1;
             restartGame();
 
-        } else if (!xWon && xPlayer.length + oPlayer.length === 9) {
+        } else if (xPlayer.length +  oPlayer.length === 9) {
             document.getElementById('startAgain').style.display = 'block';
             document.getElementById('text').textContent = "It's a Draw!";
             restartGame();
@@ -93,6 +93,7 @@ function restartGame() {
     currentPlayer = true;
     xPlayer = [];
     oPlayer = [];
+    turnsText.innerText = "X's";
     pos.forEach(cell => {
         cell.classList.remove('x', 'o');
         cell.style.pointerEvents = 'auto';
